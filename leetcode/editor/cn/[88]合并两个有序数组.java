@@ -20,9 +20,8 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        for (int i = 0; i < n; i++) {
-            nums1[m + i] = nums2[i];
-        }
+        if (n >= 0) System.arraycopy(nums2, 0, nums1, m + 0, n);
+
         for (int i = 0; i < m + n - 1; i++) {
             for (int j = i + 1; j < m + n; j++) {
                 if (nums1[i] > nums1[j]) {
